@@ -29,7 +29,7 @@
 // console.log(arr[2]);                                   // Array йдуть в послідовному порядку
 
 
-// 1. Просте спілкування з користувачем
+                    // 1. Просте спілкування з користувачем
 
 //  alert('hello');                                  // alert - вибиває вікно де тільки Ок
 
@@ -50,7 +50,7 @@
 // console.log(typeof(answers));
 
 
-// //  2. Интерполяция(ES6)
+                                  // //  2. Интерполяция(ES6)
 
 // // Приклад для того щоб знати що є такий
 // const category1 = 'toys1';
@@ -75,7 +75,7 @@
 // let incr = 10,
 //     decr = 10;
 
-// incr++;         // коли ставимо ++ оператори перед то нозиваються префиксними  
+// ++incr;         // коли ставимо ++ оператори перед то нозиваються префиксними  
 // decr--;         // якщо після то постфиксние
 
 // console.log(incr++);
@@ -88,10 +88,13 @@
 // console.log(2*4 == 8);                    // два == порівнює 
 // console.log(2 * (2 + 2) === '8');         // три === порівнює по типу даних
 
+// // оператор &&(и) завжди запинається на false(лжи)
+// // оператор ||(или) завжди запинається на true(правді)
 // // && оператор І          // Працює тоді коли два або більше значень являються правдивими
 // // || оператор или        // Працює коли хотя б 1 значення правдиве 
 // // ! оператор отрицание повертає значення в противоположне 
 // // != не равен
+
 // const isChecked = true,
 //       isChlose = false;
 
@@ -146,7 +149,7 @@
 // // :wq!
 // // Готово
 
-// // Задача урок 12
+                  // // Задача урок 12
 
 /* Задание на урок:
 
@@ -196,7 +199,7 @@
 //     console.log(personalMovieDB);
 
 
-// // Урок 13. Условия
+                           // // Урок 13. Условия
 
 // if (4 == 9) {
 //     console.log('Ok');
@@ -243,7 +246,7 @@
 // +'4';  // унарний + який працює лише з однією строкою
 
 
-// // Урок 14. Цикли
+                              // // Урок 14. Цикли
 
 // // 1.Цикл
 
@@ -273,7 +276,7 @@
     //     console.log(i); 
     // }
 
-   // // Задача по циклах и условиях 
+                    // // Задача по циклах и условиях 
 
     /* Задание на урок:
 
@@ -327,7 +330,7 @@
 //     console.log(personalMovieDB);
 
 
-// // Урок 16. Стрілочні функції
+                      // // Урок 16. Стрілочні функції
   // // Замикання функцій - це сама функція разом з всіма зовнішніми перемінними які їй доступні 
 
   // // Зразок 1) Функції
@@ -344,7 +347,7 @@
 //  console.log(num);                             // як тут помилка, тому що ми зовні і відображає ГЛОБАЛЬНУ
 
 
-//  // // Зразок 2) Функції
+                 //  // // Зразок 2) Функції
     
 //     console.log(calc(4, 3));      // Наприклад тут FUNCTION DECLARATION - Можна визвати перед функцією
 //     console.log(calc(5, 6));
@@ -379,7 +382,7 @@
 // };
 
 
-// // Урок 17.Методи і свойства строк і чисел
+                         // // Урок 17.Методи і свойства строк і чисел
 
 // const str = 'teSt';
 // // const arr = [1, 2, 10];
@@ -411,7 +414,7 @@
 // console.log(parseInt(test));         // parseInt - навіть коли використовуєм на string то робить ціле число
 // console.log(parseFloat(test));       // parseFloat - витягує з дробними значенням
 
-// // Урок 18.Задача використовуєм функії
+                    // // Урок 18.Задача використовуєм функії
 
 // 1) Первую часть задания повторить по уроку
 
@@ -495,28 +498,507 @@
 //    writeYourGenres();
 
 
-// // Урок 19. Callback функция
+                 // // Урок 19. Callback функция
 
-function first() {
-    setTimeout(function() {
-        console.log(1);
-    }, 3000);
-}
+// function first() {
+//     setTimeout(function() {
+//         console.log(1);
+//     }, 3000);
+// }
 
-function second() {
-    console.log(2);
-}
+// function second() {
+//     console.log(2);
+// }
 
-first();
-second();
+// first();
+// second();
 
-function learnJS(lang, calback) {
-    console.log(`Я вчу ${lang}`);
-    calback();
-}
+// function learnJS(lang, calback) {
+//     console.log(`Я вчу ${lang}`);
+//     calback();
+// }
 
-function done() {
-    console.log('Я пройшов цей урок');
-}
+// function done() {
+//     console.log('Я пройшов цей урок');
+// }
 
-learnJS('JavaScript', done);
+// learnJS('JavaScript', done);
+
+
+                  // // Урок 20. Об'єкти
+
+// // Об'єкти - це структури які можуть зберігати в собі любі типи данних в форматіі КЛЮЧ ЗНАЧЕННЯ (name: 'test')
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {                         // // Створюєм метод вручну. Метод це дія яку вміє здійснювати наш об'єкт
+//         console.log('Test');
+//     }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;                     // деструктуризация об'єкта для того щоб не шукати так console.log(options['colors']['border'])
+// console.log(border);
+
+// console.log(Object.keys(options).length);              // Object.keys - цей метод бере наш Об'єкт і робить масив і показує значення як ключі. А.length показує кількість
+
+// console.log(options['colors']['border']);    // для того щоб дізнатись конкретне свойство об'єкта беремо [ключ] [значення], але це не дуже правильно тому що є деструктуризация об'єкта
+
+// delete options.name;                     // delete Видаляє свойство з об'єкта 
+
+// console.log(options.colors); 
+
+
+// let counter = 0;                                  // для того щоб підраховувало свойства в об'єкті
+
+// for (let key in options) {                        // щоб перебрати всі свойства об'єкта.Кожне свойсто називається словом key і кажемо що будем копатися в ссередині options
+//     if (typeof(options[key]) === 'object') {                                   // провіряєм на те що це в нас є Об'єкт. Якщо так то
+//         for (let i in options[key]) {                                          // запускаєм цикл for in. Замість key задали i бо буде пересікання
+//             console.log(`Свойство ${i} має значення ${options[key][i]}`);
+//             counter++;
+//         }
+//     }else {
+//         console.log(`Свойство ${key} має значення ${options[key]}`);          // ${key} - взнаєм як називається ключ. ${options[key]} і яке має значення. color вибиває значення [object Object]
+//         counter++;
+//     }                                                                         // щоб його вивести потрібно прописати условие яке відображається вище 
+// }
+
+// console.log(counter);                                                         // і вивести підраховані свойства в об'єкті
+
+
+                      // // Масиви і підмасиви 
+
+// const arr = [1, 2, 3, 6, 8];
+// arr.pop();                            // pop видаляє останній елемент з нашого масиву
+// arr.push(10);                            // push добавляє елемент в кінець масива
+// console.log(arr);
+// console.log(arr.length);
+
+// arr.forEach(function(item, i, arr) {                                  // forEac перебираєм всі елементи масиву. Але тут нема break 
+    // console.log(`${i}: ${item} в середині масива ${arr}`);            // позволяє зручно маніполювати тим масивом данних який в нас буде
+// });
+
+// for (let i = 0; i < arr.length; i++) {               // перебираєм всі елементи масиву обичним циклом 
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {                               // а можна перебирати методом for of . Має break 
+//     console.log(value);
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');                  // .split - перетворює строку в масив розделитель. (', ') вказали що через кому 
+// products.sort();                                   // .sort - сортує строки
+// console.log(products.join('; '));                  // .join - перетворює масив в строку розделитель
+  
+// const arr = [19, 22, 16, 12, 28, 3, 9];
+// arr.sort(compareNum);                                        // .sort - сортує строки. Щоб сортувати числа 
+// console.log(arr);
+
+// function compareNum(a, b) {                                   // прописуєм о це і вуаля
+//     return a - b;
+// }
+
+// // У псевдомасивів нема ніяких методів які є в масивах, це просто структура яка зберігає дані по порядку
+
+
+                 // // Урок 22. Передача по силці або по значению. Spred оператор
+
+// let a = 5,
+// b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj;        // Силку
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy(mainObj) {
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+// newNumbers.c.x = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+// // // 2гий Метод 
+
+// const add = {
+//     d: 17,
+//     e: 20
+// };
+
+// const clone = Object.assign({}, add);
+
+// clone.d = 20;
+
+// // console.log(add);
+// // console.log(clone);
+
+// // // 3 Метод
+
+// const oldArray = ['a', 'b', 'c'];                   // всюди в прикладах робим копію різними методами
+// const newArrey = oldArray.slice();
+
+// newArrey[1] = 'blabla'
+// console.log(newArrey);
+// console.log(oldArray);
+
+// // // Spred оператор
+
+// const video = ['yotube', 'video', 'rutube'],
+//     blogs = ['wordpress', 'livejournal', 'blogger'],
+//     internet = [...video, ...blogs, 'vk', 'facebook'];      // Оператор розворота
+
+//     console.log(internet);
+
+
+
+//     function log(a, b, c) {
+//         console.log(a);
+//         console.log(b);
+//         console.log(c);
+//     }
+
+//     const num = [2, 5, 7];
+
+//     log(...num);                  // Spred оператор ...  Розкладаєм масив на 3 окремих елемента
+
+
+    // // 4 Метод
+
+// const array = ['a', 'b'];
+
+// const newArrey1 = [...array];
+
+// console.log(array);
+// console.log(newArrey1);
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...q};
+
+// console.log(q);
+    
+
+             // // Основи ООП, прототипно-ориентированное наследование
+             // // ОПП - наука про те як правильно робити архітектуру 
+             
+    // let str = 'some';
+    // let strObj = new String(str);
+
+    // console.log(typeof(str));
+    // console.log(typeof(strObj));
+
+    // console.dir([1, 2, 3]);
+       
+    // // Робим так щоб jonh вмів все те саме що soldier, але різнились пару свойств наприклад як у нас health 
+
+    // const soldier = {
+    //     health: 400,
+    //     armor: 100,
+    //     sayHello: function() {
+    //         console.log('Hello');
+    //     }
+    // };
+
+    // const jonh = {
+    //     health: 100
+    // };
+
+    // // А тут ми створювали окремі свойства для jonh які вказані вище
+    // Object.setPrototypeOf(jonh, soldier);                    //   setPrototypeOf - jonh вмів все те саме що soldier
+    // jonh.sayHello();
+    // console.log(jonh.armor);
+
+   // // по факту Object.create теж саме що Object.setPrototypeOf але тут ми не створюєм окремі свойста для jonh. А просто дублюєм все що в soldier
+    // const jonh = Object.create(soldier);                  // Object.create - для створення прототипних зв'язків
+    // jonh.sayHello();
+    // console.log(jonh.health);
+
+    
+
+
+    // // Устарівший формат для того щоб просто знати
+
+    // jonh.__proto__= soldier;
+
+    // console.log(jonh.armor);
+   
+    // jonh.sayHello();
+
+
+                // // Урок 24. Задача, використовуєм об'єкти
+
+
+ // ) У нас уже есть рабочее приложение, состоящее из отдельных функций. Представьте, что
+  // перед вами стоит задача переписать его так, чтобы все функции стали методами объекта personalMovieDB
+  // Такое случается в реальных продуктах при смене технологий или подхода к архитектуре программы
+                
+  // 2) Создать метод toggleVisibleMyDB, который при вызове будет проверять свойство privat. Если оно false - он
+  // переключает его в true, если true - переключает в false. Протестировать вместе с showMyDB.
+                
+// 3) В методе writeYourGenres запретить пользователю нажать кнопку "отмена" или оставлять пустую строку. 
+ // Если он это сделал - возвращать его к этому же вопросу. После того, как все жанры введены - 
+ // при помощи метода forEach вывести в консоль сообщения в таком виде:
+// "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
+                
+                
+                            // Код возьмите из предыдущего домашнего задания
+
+ // // Розв'язок
+
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     generes: [],
+//     privat: false,
+//     start: function() {
+//         personalMovieDB.count = +prompt('Скільки фільмів ви подивились?', '');
+        
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt('Скільки фільмів ви подивились?', '');
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for(let i = 0; i <2; i++) {
+//             const a = prompt('Один з останніх проглянутих фільмів?', ''),
+//                   b = prompt('На скільки оцінити його?', '');
+    
+//             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('done');
+//             } else {
+//                 console.log('error');
+//                 i--;
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         if (personalMovieDB.count < 10) {
+//             console.log('Просмотрено довольно мало фильмов');
+//         }else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//             console.log('Вы классический зритель');
+//         }else if (personalMovieDB.count >= 30 ) {
+//             console.log('Вы киноман');
+//         }else {
+//             console.log('Произошла ошибка');
+//         }
+//     },
+//     showMyDB: function (hidden) {
+//         if (!hidden) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         }else {
+//             personalMovieDB.privat = true;
+//         }
+//     },
+//     writeYourGenres: function () {
+//         for (let i = 1; i < 2; i++) {
+//         // //    let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+//         //  //   if(genre === '' || genre == null) {
+//         //  //     console.log('Введено не коректні дані ')                    // 2-ий Спосіб
+//         //  //       i--;
+//         //  //   }else {                                                       
+//         //  //       personalMovieDB.generes[i - 1] = genre;
+//         //  //   }
+            
+//         let genres = prompt(`Введеть улюблені жанри через кому `).toLowerCase();
+
+//         if(genres === '' || genres == null) {
+//                     console.log('Введено не коректні дані ');
+//                     i--;
+//                 }else {
+//                     personalMovieDB.generes = genres.split(', ');
+//                     personalMovieDB.generes.sort();
+//                 }
+//         }
+
+//         personalMovieDB.generes.forEach((item, i) => {
+//             console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//         });
+//     }
+// };
+
+                            // // Динамичекская типизация в JS
+                            
+        // // To String
+// // 1. Спосіб.    Старий спосіб
+
+// console.log(typeof(String(null)));
+
+// // 2. Спосіб 
+// console.log(typeof(5 + ''));           // при додаванні чого лібо до строки виходить string
+// console.log(typeof(5 + ''));
+
+// const num = 5;
+
+// console.log('https://vk.com/catalog/' + num);
+
+// const fontSize = 26 + 'px';
+// console.log(typeof(fontSize));
+
+            // // To Number
+// // 1. Спосіб.  Старий спосіб
+
+// console.log(typeof(Number('4')));
+
+// // 2. Спосіб  
+// console.log(typeof(+'5'));                                                // змінюєм унарним + на числовий тип даних
+
+// // 3. Спосіб.  Мало користуються цим способом
+
+// console.log(typeof(parseInt('4px', 5)));
+
+// // Реальний спосіб
+
+// let answer = +prompt('Hello', 'напишіть число');                               // змінюєм унарним + на числовий тип даних 2им способом
+// console.log(typeof(answer));
+ 
+            // // To boolean
+
+             // // 0, '', null, undefined, NaN;          // ЗАВЖДИ БУДЕ false
+ 
+// // 1. Спосіб 
+// let switcher = null;                        // не буде працювати оскільки null
+
+// if (switcher) {
+//     console.log('Warking...');
+// }
+
+// switcher = 1;                              // буде праювати оскільки задане значення
+
+// if (switcher) {
+//     console.log('Warking...');
+// }
+
+// // 2. Спосіб. використовується дуже рідко бо є попередній спосіб
+
+// console.log(typeof(Boolean('4')));
+
+// // 3. Спосіб
+
+// console.log(typeof(!!'43444'));                        // !! для того щоб перетворити в boolean тип даних 
+
+
+                        // // Задачі з співбесід на розуміння основи
+
+// let x = 5; alert( x++ );                // буде 5  
+
+// [ ] + false - null + true               // NaN 
+// console.log([] + false - null + true);        // пустий масив в таких операціях [] відноситься до строкових типів даних а іменно до пустої строки
+
+// let y = 1; 
+// let x = y = 2; 
+// alert(x);                                 // 2
+
+// [ ] + 1 + 2                                   
+// console.log([ ] + 1 + 2);           // "12"   із за приведение типов данных.       //  було б boolean або null замість [] тоді було б 3 
+
+// alert( '123'[2] );                     // "3"       // тому що вказано 2ий символ а починаються з 0
+
+// 2 && 1 && null && 0 && undefined                  // оператор &&(и) завжди запинається на false(лжи)
+// console.log(2 && 1 && null && 0 && undefined );   // null                  // 0, '', null, undefined, NaN; - ЗАВЖДИ БУДЕ false. В даному випадку запинається на 1ому ложному виразі null і далі код не піде    
+
+// console.log(!!( 1 && 2 ) === (1 && 2)) ;             // false    // є різниця між ними тому що так !! ми перетворили його в boolean значення   
+
+// alert( null || 2 && 3 || 4 );         // 3                 // оператор ||(или) завжди запинається на true(правді)
+
+// const a = [1, 2, 3];                               // тому що різні ящики в нашому випадку різні хранилища інформації  
+// const b = [1, 2, 3];
+// console.log(a == b);                               // false не правда
+
+// alert( +"Infinity" );                                 // выведет этот код Infinity    // а тип даних Number
+
+// console.log("Їжак" > "яблуко");                         // false     //  а хз чо,  треба дивитись по таблиця юнікод
+
+// console.log(0 || "" || 2 || undefined || true || falsе );   // 2           // шукає і стопориться до першого true
+
+                             // // Получаєм елемент зі сторінки
+
+// const box = document.getElementById('box');               // шукаєм елемент по id
+
+// console.log(box);
+
+// const btns = document.getElementsByTagName('button');    // шукаєм елемент по назві тега
+
+// console.log(btns);                            // якщо так вказати то нам видасть колекцію, навіть якщо елемент один
+// console.log(btns[1]);                         // а так ми одержемо той елемент який вказалали 
+
+// const circle = document.getElementsByClassName('circle');      // шукаєм елемент по class
+// console.log(circle);
+
+// const hearts = document.querySelectorAll('.heart');                    // querySelectorAll - в середину нього поміщаєм CSS селектор. і тут потрібно ставити . або # в залежності class чи id 
+// hearts.forEach(item => {                                               // виводими всі почергово елементи які будуть находитись в масиві hearts
+//     console.log(item);                                                 // item це кожний елемент який находиться в тому псевдомасиві hearts
+// });
+
+
+// const oneHeart = document.querySelector('.heart');                     // querySelector тут буде виводитись лише перший елемент
+// console.log(oneHeart);
+
+                    // // Дії з елементами на сторінці 
+
+// // З попереднього уроку
+const  box = document.getElementById('box'),
+    btns = document.getElementsByTagName('button'),
+    circle = document.getElementsByClassName('circle'),
+    hearts = document.querySelectorAll('.heart'),                     // querySelectorAll виводими всі почергово елементи які будуть находитись в масиві
+    oneHeart = document.querySelector('.heart');                      // querySelector тут буде виводитись лише перший елемент
+
+box.style.backgroundColor = 'blue';
+box.style.width = '500px'; 
+
+
+
+
+
+
+
+
+

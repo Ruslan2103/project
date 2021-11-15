@@ -988,12 +988,62 @@
 const  box = document.getElementById('box'),
     btns = document.getElementsByTagName('button'),
     circle = document.getElementsByClassName('circle'),
-    hearts = document.querySelectorAll('.heart'),                     // querySelectorAll виводими всі почергово елементи які будуть находитись в масиві
-    oneHeart = document.querySelector('.heart');                      // querySelector тут буде виводитись лише перший елемент
+    wrapper = document.querySelector('.wrapper'),                     // створили для того щоб викорисстовувати безліч раз
+   // // замінили на wrapper замість document щоб було понятно в середині чого ми шукаєм
+    hearts = wrapper.querySelectorAll('.heart'),                     // querySelectorAll виводими всі почергово елементи які будуть находитись в масиві
+    oneHeart = wrapper.querySelector('.heart');                      // querySelector тут буде виводитись лише перший елемент
+    
 
-box.style.backgroundColor = 'blue';
-box.style.width = '500px'; 
+// box.style.backgroundColor = 'blue';
+// box.style.width = '500px';                                       // а тут записуєм так) одне і теж що на рядок нище   
 
+box.style.cssText = `background-color: blue; width: 500px`;         // cssText тут записуєм як у css
+
+btns[1].style.borderRadius = '100%';
+circle[1].style.backgroundColor = 'red';
+
+// for (let i = 0; i < hearts.length; i++) {                             // тут ми вибираєм всі елементи hearts
+//     hearts[i].style.backgroundColor = 'blue';                         // спеціальні перебираючі методи
+// }
+
+hearts.forEach(item => {                                                 // тут ми вибираєм всі елементи hearts за допомогою forEach
+    item.style.backgroundColor = 'blue';
+});
+
+// const test = document.createTextNode('бла бла бла');               // цей метод використовується дуже рідко
+
+const div = document.createElement('div');                              // document.createElement Створили новий елемент але він існує лише в середині JS на сторінці він не появиться
+div.classList.add('black');                              // добавили в створений клас колір
+
+// document.body.append(div);                            // добавили створений елемент в кінець сторінки
+// document.querySelector('.wrapper').append(div);       // добавили створений елемент в клас wrapper ОСТАННІМ
+// wrapper.prepend(div);                                 // добавили створений елемент в клас wrapper ПЕРШИМ
+
+// hearts[1].before(div);                                   // тут добавили створений елемент ПЕРЕД hearts[1]
+// hearts[1].after(div);                                    // тут добавили створений елемент ПІСЛЯ hearts[1]
+
+// circle[0].remove();                                      // видаляєм circle[0]
+
+// hearts[0].replaceWith(circle[0]);                           // замінили hearts[0] на circle[0]
+
+                // // Тепре розбиремо конструкції які трохи устаріли але можуть попадатись
+
+// wrapper.appendChild(div);                    // теж саме як і вище вказано добавили створений елемент в кінець сторінки
+
+// wrapper.insertBefore(div, hearts[1]);           // теж саме як і вище вказано  
+
+// wrapper.removeChild(hearts[1]);                  // видаляєм hearts[1]
+
+// wrapper.replaceChild(circle[0], hearts[0]);       // замінили hearts[0] на circle[0]
+
+
+
+
+div.innerHTML = '<h1>Hello World</h1>';             // Вписуєм текст в наш створений елемент, можна і без <h1> а можна з HTML структурою               
+
+// div.textContent = 'hello';                          // тут працюєм лише з текстом HTML структура тут не підійде як вище
+
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');     // В душках 2 аргумента 2гий той html який ми хочемо вставити, а 1ший де вставляти дані, відкриваючи '' показує 4 варіанти 
 
 
 

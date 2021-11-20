@@ -985,35 +985,35 @@
                     // // Дії з елементами на сторінці 
 
 // // З попереднього уроку
-const  box = document.getElementById('box'),
-    btns = document.getElementsByTagName('button'),
-    circle = document.getElementsByClassName('circle'),
-    wrapper = document.querySelector('.wrapper'),                     // створили для того щоб викорисстовувати безліч раз
-   // // замінили на wrapper замість document щоб було понятно в середині чого ми шукаєм
-    hearts = wrapper.querySelectorAll('.heart'),                     // querySelectorAll виводими всі почергово елементи які будуть находитись в масиві
-    oneHeart = wrapper.querySelector('.heart');                      // querySelector тут буде виводитись лише перший елемент
+// const  box = document.getElementById('box'),
+//     btns = document.getElementsByTagName('button'),
+//     circle = document.getElementsByClassName('circle'),
+//     wrapper = document.querySelector('.wrapper'),                     // створили для того щоб викорисстовувати безліч раз
+//    // // замінили на wrapper замість document щоб було понятно в середині чого ми шукаєм
+//     hearts = wrapper.querySelectorAll('.heart'),                     // querySelectorAll виводими всі почергово елементи які будуть находитись в масиві
+//     oneHeart = wrapper.querySelector('.heart');                      // querySelector тут буде виводитись лише перший елемент
     
 
 // box.style.backgroundColor = 'blue';
 // box.style.width = '500px';                                       // а тут записуєм так) одне і теж що на рядок нище   
 
-box.style.cssText = `background-color: blue; width: 500px`;         // cssText тут записуєм як у css
+// box.style.cssText = `background-color: blue; width: 500px`;         // cssText тут записуєм як у css
 
-btns[1].style.borderRadius = '100%';
-circle[1].style.backgroundColor = 'red';
+// btns[1].style.borderRadius = '100%';
+// circle[1].style.backgroundColor = 'red';
 
 // for (let i = 0; i < hearts.length; i++) {                             // тут ми вибираєм всі елементи hearts
 //     hearts[i].style.backgroundColor = 'blue';                         // спеціальні перебираючі методи
 // }
 
-hearts.forEach(item => {                                                 // тут ми вибираєм всі елементи hearts за допомогою forEach
-    item.style.backgroundColor = 'blue';
-});
+// hearts.forEach(item => {                                                 // тут ми вибираєм всі елементи hearts за допомогою forEach
+//     item.style.backgroundColor = 'blue';
+// });
 
 // const test = document.createTextNode('бла бла бла');               // цей метод використовується дуже рідко
 
-const div = document.createElement('div');                              // document.createElement Створили новий елемент але він існує лише в середині JS на сторінці він не появиться
-div.classList.add('black');                              // добавили в створений клас колір
+// const div = document.createElement('div');                              // document.createElement Створили новий елемент але він існує лише в середині JS на сторінці він не появиться
+// div.classList.add('black');                              // добавили в створений клас колір
 
 // document.body.append(div);                            // добавили створений елемент в кінець сторінки
 // document.querySelector('.wrapper').append(div);       // добавили створений елемент в клас wrapper ОСТАННІМ
@@ -1039,16 +1039,171 @@ div.classList.add('black');                              // добавили в 
 
 
 
-div.innerHTML = '<h1>Hello World</h1>';             // Вписуєм текст в наш створений елемент, можна і без <h1> а можна з HTML структурою               
+// div.innerHTML = '<h1>Hello World</h1>';             // Вписуєм текст в наш створений елемент, можна і без <h1> а можна з HTML структурою               
 
 // div.textContent = 'hello';                          // тут працюєм лише з текстом HTML структура тут не підійде як вище
 
-div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');     // В душках 2 аргумента 2гий той html який ми хочемо вставити, а 1ший де вставляти дані, відкриваючи '' показує 4 варіанти 
+// // Вставляєм кусочок html кода перед або після певних тегів
+// div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');     // В душках 2 аргумента 2гий той html який ми хочемо вставити, а 1ший де вставляти дані, відкриваючи '' показує 4 варіанти 
+
+
+                    // // Урок 31. События и их обработчики
+// // Чомусь не паше))) але це і так застарілий метод і якщо створиться ще один то попередній зчезне
+// const btn = document.querySelector('button'),
+//       overlay = document.querySelector('.overlay');
+// btn.onclick = function() {
+//     alert('Click');
+// };
+
+// // Це юзабельний метод. І створюючи декілька таких попередні будуть праацювати
+// btn.addEventListener('click', () => {               // addEventListener - слідкує за цим елементом і якщо пройде собитие яке ми назначим то він запустить обробку. Першим аргументом ми передаєм назву собитие click, Другим аргументом передаєм call back функцію яка і буде нашим оброботчиком
+//     alert('Click');
+// });
+
+// btn.addEventListener('mouseenter', (e) => {           // mouseenter при наведені працює     // e = event  як хочемо так і пишемо
+//     console.log(e.target);                            // тут ми можем з ним взаємодіяти
+//     e.target.remove();                                // і наприклад видаляється, при наведені тому що mouseenter 
+//     // console.log('Hover');
+// });
+
+// // Всплитие собитий це коли оброботчик собитій спочатку спрацьовує на вложеном елементі event.target
+// // потім на родителей event.currentTarget якщо вони є і так вище і вище 
+
+// let i = 0;
+// const deleteElement = (event) => {
+//     console.log(event.currentTarget);                   
+//     console.log(event.type);
+
+//     i++
+//     if (i == 1) {
+// btn.removeEventListener('click', deleteElement);
+//     }
+// };
+
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
 
 
 
+// const link = document.querySelector('a');
+
+// link.addEventListener('click', (event) => {               // event - об'єкт собитея 
+//     event.preventDefault();                               // для того щоб відмінити стандартну поведінку
+
+//     console.log(event.target);
+// });
 
 
+// // Щоб навішати один і той же функионал на багато одинакових або не одинакових елемента
+
+// const btns = document.querySelectorAll('button');
+
+// btns.forEach(btn =>  {
+//     btn.addEventListener('click', deleteElement, {once: true});             // {once: true} - працюватиме лише один клик
+// });
+
+                // // Урок 32. Навигация по DOM  - элементам, data-атрибуты, преимущество for/of
+
+// console.log(document.head);
+// console.log(document.documentElement);                // получаєм html зі всім содержимим що в ньому є
+// console.log(document.body.childNodes);                // получаєм NodeList
+// console.log(document.body.firstChild);                   // перший родитель       
+// console.log(document.body.lastElementChild);
+// console.log(document.body.lastChild);                    // останній родитель
+
+// console.log(document.querySelector('#current').parentNode);                  // получить родителя ноду
+// console.log(document.querySelector('#current').parentNode.parentNode);       // получаєм обгортку 2х попередніх блоків
+
+// console.log(document.querySelector('[data-current="3"]').nextSibling);      // nextSibling - получаєм наступний за ним елемент. Получили text ноду просто перенос строки
+// console.log(document.querySelector('[data-current="3"]').previousSibling);     // previousSibling - получаєм попередню ноду
+
+// // Щоб получати не ноду а елемент
+
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);     // получаєм наступний елемент
+// console.log(document.querySelector('#current').parentElement);                    // получить родителя елемент
+
+// // Деколи нам потрібно перебрати елементи в псевдомасиві за допомогою
+// // for of для того щоб мати можливість зупиняти цикл або повністю приривати
+// for (let node of document.body.childNodes) {
+//     if (node.nodeName == '#text') {                 // при переборі всіх childNodes наткнемось на текстову ноду
+//         continue;                                   // то ця етерація, повторбвання цикла просто зупиниться
+//     }
+
+//     console.log(node);
+// }
 
 
+                        // // События на мобильных устройствах
 
+// // є 6 Событий
+// // Коли спрацьовує
+// touchstart - коли палець торкаємось елемента
+// touchmove - при дотику до елемента рухаєм пальцем 
+// touchend - коли палець відірвався від елемента 
+// touchenter - коли ведем по екрану і при цьому наскакуємо на елемент на який повішана це события
+// touchleave - коли продовжив скользити і пішов за межі елемента
+// touchcancel - коли точка вззаємодії більше не реєструється на поверхності
+
+// window.addEventListener('DOMContentLoaded', () => {       // буде чекати поки DOM структура повністю не построїться  // DOMContentLoaded - для того щоб ми точно знали що всі наші DOM узли готові, можна вішати на window i document 
+//     const box = document.querySelector('.box1');
+
+//     box.addEventListener('touchstart', (e) => {              // при натискані
+//         e.preventDefault();                                  // для того щаб відміняти стандартну поведінку браузера щоб не було траблів
+
+//         console.log('Start');
+//         console.log(e.targetTouches);
+//     });
+
+//     box.addEventListener('touchmove', (e) => {              // при натисканні і русі
+//         e.preventDefault();
+
+//         console.log('Move');
+//         // console.log(e.targetTouches[0].pageX);           // вказали 1ий палець і координати руху по елементу
+//     });
+
+    // box.addEventListener('touchend', (e) => {                // при віджиманні 
+    //     e.preventDefault();
+
+    //     console.log('End');
+    // });
+
+// });
+
+// // Є 3 Основних Свойства для роботи з сенсорними устройствами
+
+// touches - скільки пальів на екрані
+// targetTouches - пальці які взаємодіють іменно з елементом конкретним 
+// changedTouches - список пальців які беруть участь в данному Событии, наприклад
+// якщо це touchend то список буде содержать палець який був забраний навіть якщо остальні 4 пальця в нас на екрані
+// тоїсть це пальці які зробили відповідне назначене дійство
+
+                // // Async,defer динамічні скріпти
+
+const p = document.querySelectorAll('p');
+console.log(p);
+
+// //  <script defer src="script.js"></script> 
+// // defer - загружає скріпт в фоновому режимі, ніколи не блокує сторінку, виконується тоді коли наше дом дерево готове, якщо є декідька defer то загружається по черзі 
+
+// // <script async src="script.js"></script> 
+// // async - як тільки до нього доходить черга загружається у фоновому режимі но при цьому запускається тоді коли був загружен
+// // він взагалі нікого не чекає, якщо є декілька async то загрузиться перший той хто скоріше оброботається
+// // async - коли ми використовуєм скріпти з атрибутом async ми повинні бути точно впевнені що 
+// // цей скріпт абсолютно не залежить від DOM структури, йому вссерівно сформувалась вона чи ні 
+// // і крім цього він не повинен залежати від друних скріптів, загрузився і зразу виконався. БУТИ АКУРАТНИМИ З ЦИМ.
+
+// const script = document.createElement('script');        // створюєм тег скрііпт // динамічні загружаємі скріпти ведуть себе як async
+// script.src = 'script.js';                               // встановлюєм шлях до скріпта
+// script.async = false                    //  для того щоб скріпт вів себе як обичний, той що поміщений на сторінку
+// document.body.append(script);                           //цей елемент існує лише в скріпті і шоб добавити його   // поміщаєм елемент в кінецць себе
+
+function loadScript(src) {
+    const script = document.createElement('script'); 
+    script.src = src;
+    script.async = false                  // встановили асинхронность false і тепер вони будуть виконуватись строго один за одним
+    document.body.append(script);
+}
+
+loadScript('script.js');                      // визиваєм
+loadScript('ше якийсь скріпт');
+loadScript('і ще якийсь');
